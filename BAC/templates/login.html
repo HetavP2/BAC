@@ -1,16 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Login</title>
-</head>
-<body>
-    <form>
-        <input type="text" placeholder="user_name" >
-        <input type="password" placeholder="password"  >
-    <input type="submit">
+  </head>
+
+  <body>
+    <form action="/login" method="POST">
+      <input type="text" name="user_name" placeholder="user_name" />
+      <input type="password" name="password" placeholder="password" />
+      <input type="submit" />
     </form>
-    
-</body>
+  </body>
 </html>
+
+<!--
+  Heads up! 👋
+
+  Plugins:
+    - @tailwindcss/forms
+-->
+
+<section class="bg-white">
+  <div class="lg:grid lg:min-h-screen lg:grid-cols-12">
+    <aside
+      class="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6"
+    >
+      <img
+        alt=""
+        src="https://cdn.discordapp.com/attachments/1217233251995877496/1236386504331497543/side_picture.png?ex=6637d229&is=663680a9&hm=b99fd89b806cf55afa34a2fb842af0be7ddff250d2e0cb6cf184b81071119077&"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+    </aside>
+
+    <main
+      class="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6"
+    >
+      <div class="max-w-xl lg:max-w-3xl">
+        <img
+          src="https://cdn.discordapp.com/attachments/1217233251995877496/1236373642594619563/bac-removebg-preview.png?ex=6637c62f&is=663674af&hm=e9e216cf0bc69fc7e3ef5adebd9a7f97e687ffaad63f951d6df13f247a3e6656&"
+          width="20%"
+        />
+
+        <h1
+          class="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl"
+        >
+          Welcome to the Brampton Arts & Culture Initiative
+        </h1>
+
+        <p class="mt-4 leading-relaxed text-gray-500">
+          The leading Arts and Culture movement to support the Brampton 2040
+          Vision. Join today and make a change.
+        </p>
+
+        <form action="/login" method="POST" class="mt-8 grid grid-cols-6 gap-6">
+          <div class="col-span-6 sm:col-span-3">
+            <label
+              for="FirstName"
+              class="block text-sm font-medium text-gray-700"
+            >
+              Username
+            </label>
+
+            <input
+              type="text"
+              id="FirstName"
+              name="user_name"
+              class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+            />
+          </div>
+
+          <div class="col-span-6 sm:col-span-3">
+            <label
+              for="Password"
+              class="block text-sm font-medium text-gray-700"
+            >
+              Password
+            </label>
+
+            <input
+              type="password"
+              id="Password"
+              name="password"
+              class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+            />
+          </div>
+
+          <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+            <button
+              class="inline-block shrink-0 rounded-md border border-yellow-600 bg-yellow-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-yellow-600 focus:outline-none focus:ring active:text-yellow-500"
+            >
+              Log in
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+</section>
