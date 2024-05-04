@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arts</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Art Gallery</title>
+<style>
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 10px;
+    }
+    
+    .gallery img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 5px;
+        text-align: center;
+        font-size: 0.8em;
+    }
+</style>
 </head>
 <body>
-    grid here
+
+<div class="gallery">
+    <div class="gallery-item">
+        <img src="painting.jpg" alt="Painting">
+        <div class="gallery-caption">Painting</div>
+    </div>
+    <div class="gallery-item">
+        <img src="sculpture.jpg" alt="Sculpture">
+        <div class="gallery-caption">Sculpture</div>
+    </div>
+    <div class="gallery-item">
+        <img src="photography.jpg" alt="Photography">
+        <div class="gallery-caption">Photography</div>
+    </div>
+    <!-- Add more gallery items as needed -->
+</div>
+
 </body>
 </html>
