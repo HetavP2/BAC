@@ -48,7 +48,8 @@ def submitart():
         # uploading = Arts(filename=filename, data=file_upload.read())
         # db.session.add(uploading)
         # db.session.commit()
-        # uploadFile = supabase.storage.from_("arts").upload(uploading, filename)
+        # print(type(uploading))
+        # uploadFile = supabase.storage.from_("arts").upload(filename, file_upload)
         # submitartdata = supabase.table("arts").insert({"message": str(message), "file_name":file_name, "user_id": str(user_info.data[0]['user_id']), "user_name": str(user_info.data[0]['user_name'])}).execute()
 
         # print(uploadFile)
@@ -58,10 +59,12 @@ def submitart():
 
 @app.route('/arts/<string:artId>', methods=['GET'])
 def art_page(artId = ''):
-    # image = supabase.storage().from_("arts").get_public_url(artId)
+    # global user_info
+    # abc = supabase.table("people").update({"points": 100}).eq("user_name", str(user_info.data[0]['user_name'])).execute()
+    img = supabase.storage.from_("arts").get_public_url(artId)
 
 
-    return render_template("art.html")
+    return render_template("art.html", img=img)
 
 @app.route('/purchase/<string:artId>', methods=['POST'])
 def purchase(artId = ''):
