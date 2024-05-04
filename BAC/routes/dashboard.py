@@ -39,18 +39,19 @@ def submitart():
     # userArts = getArt(current_user.id)
     # form = ArtForm()
     if request.method == 'POST':
+        
         file_name = request.form['file_name']
         message = request.form['message']
         file_upload = request.files['fileupload']
         filename = secure_filename(file_upload.filename)
         # mimetype = file_upload.mimetype
-        uploading = Arts(filename=filename, data=file_upload.read())
+        # uploading = Arts(filename=filename, data=file_upload.read())
         # db.session.add(uploading)
         # db.session.commit()
+        # uploadFile = supabase.storage.from_("arts").upload(uploading, filename)
         # submitartdata = supabase.table("arts").insert({"message": str(message), "file_name":file_name, "user_id": str(user_info.data[0]['user_id']), "user_name": str(user_info.data[0]['user_name'])}).execute()
 
-        uploadFile = supabase.storage().from_("arts").upload(filename, uploading)
-        print(uploadFile)
+        # print(uploadFile)
         return redirect(url_for('dashboard'))
 
     return render_template('dashboard.html') 
